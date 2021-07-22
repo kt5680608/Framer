@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+# sequence
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## sequence
+> 한가지 속성으로만 동작하는 애니메이션이 아닌 다중 동작이 섞이거나 나열된 애니메이션의 경우 sequence를 만들어 사용하면 효율적임.
 
-## Available Scripts
+## useAnimation
+> useAnimation은 복잡한 다중 시퀀스를 만들때 사용하는 Hook임.
 
-In the project directory, you can run:
+> AnimationControls의 start와 stop 메서드를 사용할 수 있음
 
-### `npm start`
+``` 
+sequence.start({
+  x: "100%,
+  backgroundColor: ##E83845;
+  transition: {duration: 1},
+})
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+또는 이와 같이 생성된 variants를 사용할 수도 있음
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```
+sequence.start("hidden")
+```
 
-### `npm test`
+## async, await
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+> 순차적으로 애니메이션이 나열되는 sequence를 만들때 비동기 처리가 중요함
 
-### `npm run build`
+```
+async function sequence() {
+    await animation.start({ rotate: 90 })
+    await animation.start({ scale: 1.5 })
+    await animation.start({ rotate: -0 })
+    animation.start ({ scale: 1 })    
+  }
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![sequence](https://user-images.githubusercontent.com/58690483/126625282-b8cf78f0-1386-497d-afc9-a4089a8edef8.gif)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
