@@ -1,0 +1,17 @@
+.App{
+  background-color: #E83845;
+  width: 100vw;
+  height: 100vh;
+}
+
+.cards{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
