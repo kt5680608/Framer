@@ -1,0 +1,17 @@
+.App{
+  width: 100vw;
+  height: 300vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #E83845;
+  overflow: hidden;
+}
+
+.motion-div{
+  position: absolute;
+  width: 40vw;
+  height: 400px;
+  background-color: white;
+  border-radius: 1em;
+}
